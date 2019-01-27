@@ -1,0 +1,9 @@
+\.DS_Store
+*.bib
+*.aux
+*.bbl
+*.blg
+*.fdb_*
+*.fls
+*.xml
+*.gz
