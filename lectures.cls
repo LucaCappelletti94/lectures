@@ -43,13 +43,14 @@
 \RequirePackage{fp,xparse,iftex}
 \RequirePackage[english, italian]{babel} % Set up supported languages. Last one is default.
 \RequirePackage[T1]{fontenc}  % Defines true type fonts
-\RequirePackage[x11names,table,dvipsnames]{xcolor}
 \RequirePackage{multicol}
 \RequirePackage{emptypage}
 \RequirePackage{microtype}
 \RequirePackage{centernot}
 \RequirePackage{framed}
 \RequirePackage{float}
+\RequirePackage{hyperref}
+\RequirePackage[x11names,table,dvipsnames]{xcolor}
 
 \RequirePackage{subfiles} % To use subfiles without cruxifying saints
 \RequirePackage{parskip} % To leave spaces in paragraphs without using \\
@@ -116,6 +117,24 @@
 \makeatother
 \setfloatlocations{figure}{H}
 \setfloatlocations{table}{H}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                         %
+% COLOR                                   %
+%                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\red}[1]{
+	\textcolor{red!90}{#1}
+}
+
+\newcommand{\blue}[1]{
+	\textcolor{blue!90}{#1}
+}
+
+\newcommand{\error}[1]{
+	\textcolor{red!90}{#1}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                         %
@@ -632,6 +651,7 @@
   % #8 -> University
   % #9 -> Country
   %
+  \hypersetup{pageanchor=false}
   \begin{titlepage}
   \begin{center}
       \textbf{\MakeUppercase{\large{#1}}}\\
@@ -666,4 +686,11 @@
       \today
   \end{center}
   \end{titlepage}
+  \hypersetup{pageanchor=true}
+}
+
+\let\oldtableofcontents\tableofcontents
+
+\RenewDocumentCommand{\tableofcontents}{}{
+	{\hypersetup{hidelinks}\oldtableofcontents}
 }
