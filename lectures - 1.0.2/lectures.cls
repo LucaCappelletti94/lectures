@@ -7,7 +7,7 @@
 %
 % THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %
-\def\LectureNotesVersion{v1.0.1}
+\def\LectureNotesVersion{v1.0.2}
 \newcommand{\defaultlanguage}{italian}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lectures}[2019/01/27 LaTeX document class for lectures notes.]
@@ -43,13 +43,14 @@
 \RequirePackage{fp,xparse,iftex}
 \RequirePackage[english, italian]{babel} % Set up supported languages. Last one is default.
 \RequirePackage[T1]{fontenc}  % Defines true type fonts
-\RequirePackage[x11names,table,dvipsnames]{xcolor}
 \RequirePackage{multicol}
 \RequirePackage{emptypage}
 \RequirePackage{microtype}
 \RequirePackage{centernot}
 \RequirePackage{framed}
 \RequirePackage{float}
+\RequirePackage[colorlinks=true,urlcolor=blue,pdfpagelabels,hyperindex=false]{hyperref}  % Enable table of contents and links.
+\RequirePackage[x11names,table,dvipsnames]{xcolor}
 
 \RequirePackage{subfiles} % To use subfiles without cruxifying saints
 \RequirePackage{parskip} % To leave spaces in paragraphs without using \\
@@ -116,6 +117,24 @@
 \makeatother
 \setfloatlocations{figure}{H}
 \setfloatlocations{table}{H}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                         %
+% COLOR                                   %
+%                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\red}[1]{
+	\textcolor{red!90}{#1}
+}
+
+\newcommand{\blue}[1]{
+	\textcolor{blue!90}{#1}
+}
+
+\newcommand{\error}[1]{
+	\textcolor{red!90}{#1}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                         %
@@ -475,6 +494,7 @@
 %                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\theoremstyle{definition} % Sets the theorem style without italic
 
 \IfEq{\defaultlanguage}{italian}{
   \newtheorem{theorem}{Teorema}[section]
@@ -632,6 +652,7 @@
   % #8 -> University
   % #9 -> Country
   %
+  \hypersetup{pageanchor=false}
   \begin{titlepage}
   \begin{center}
       \textbf{\MakeUppercase{\large{#1}}}\\
@@ -666,4 +687,11 @@
       \today
   \end{center}
   \end{titlepage}
+  \hypersetup{pageanchor=true}
+}
+
+\let\oldtableofcontents\tableofcontents
+
+\RenewDocumentCommand{\tableofcontents}{}{
+	{\hypersetup{hidelinks}\oldtableofcontents}
 }
