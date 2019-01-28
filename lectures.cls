@@ -49,7 +49,7 @@
 \RequirePackage{centernot}
 \RequirePackage{framed}
 \RequirePackage{float}
-\RequirePackage{hyperref}
+\RequirePackage[colorlinks=true,urlcolor=blue,pdfpagelabels,hyperindex=false]{hyperref}  % Enable table of contents and links.
 \RequirePackage[x11names,table,dvipsnames]{xcolor}
 
 \RequirePackage{subfiles} % To use subfiles without cruxifying saints
@@ -494,6 +494,7 @@
 %                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\theoremstyle{definition} % Sets the theorem style without italic
 
 \IfEq{\defaultlanguage}{italian}{
   \newtheorem{theorem}{Teorema}[section]
