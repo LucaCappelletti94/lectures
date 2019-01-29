@@ -471,6 +471,7 @@
 \ctikzset{tripoles/pmos style/emptycircle}
 \usetikzlibrary{shapes,arrows,calc,positioning,matrix}
 \usepgfplotslibrary{external}
+\tikzexternalize[prefix=tikz/]
 
 \pgfplotsset{samples=60,shader=interp,grid=both}
 
