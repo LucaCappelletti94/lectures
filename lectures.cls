@@ -513,7 +513,7 @@
   \newtheorem{problem}[theorem]{Problema}
   \newtheorem{customProof}[theorem]{Dimostrazione}
 }{
-  \IfEq{\defaultlanguage}{italian}{
+  \IfEq{\defaultlanguage}{english}{
     \newtheorem{theorem}{Theorem}[section]
     \newtheorem{corollary}{Corollary}[theorem]
     \newtheorem{lemma}[theorem]{Lemma}
