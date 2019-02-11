@@ -413,6 +413,8 @@
 
 % automaticall apply mathmode to column
 \newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{R}{>{$}r<{$}}
 \renewcommand*{\arraystretch}{1.25} % Stretching arrays
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
