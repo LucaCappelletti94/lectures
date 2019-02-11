@@ -398,6 +398,23 @@
 %                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Units macro to be able to do \unit{m} to get \leftm\right] and \unit{m}{s} to get \left[\frac{m}{s}\right]
+\NewDocumentCommand{\unit}{m G{}}{
+	\ifblank{#2}{
+		\sqr{#1}
+	}{
+		\sqr{\frac{#1}{#2}}
+	}
+}
+
+\def\kelvin{
+  ^\circ K
+}
+
+\def\fahrenheit{
+  ^\circ F
+}
+
 \def\hz{
   Hz
 }
