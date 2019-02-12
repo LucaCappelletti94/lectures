@@ -412,6 +412,10 @@
 	}
 }
 
+\def\celsius{
+  ^\circ C
+}
+
 \def\kelvin{
   ^\circ K
 }
