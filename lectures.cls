@@ -71,6 +71,11 @@
 \RequirePackage{sectsty} % Styles sectional headers
 \RequirePackage{fancyhdr} % This allows for the headings in the chapters
 \pagestyle{fancy} % This activates it
+
+% Reset the page number position
+\cfoot{}	% Make the center of the footer blank
+\rfoot{\thepage} % Add the page number to the right corner of the page
+
 \RequirePackage[avantgarde]{quotchap} % Custom style for chapters
 
 % Reduce chapter name size and reserved blank space.
