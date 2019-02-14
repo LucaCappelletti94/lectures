@@ -53,6 +53,7 @@
 \RequirePackage{centernot}
 \RequirePackage{framed}
 \RequirePackage{float}
+\RequirePackage{verbatim} 
 \RequirePackage[colorlinks=true,urlcolor=blue,pdfpagelabels,hyperindex=false]{hyperref}  % Enable table of contents and links.
 \RequirePackage[x11names,table,dvipsnames]{xcolor}
 
@@ -502,8 +503,6 @@
 \ctikzset{tripoles/mos style/arrows}
 \ctikzset{tripoles/pmos style/emptycircle}
 \usetikzlibrary{shapes,arrows,calc,positioning,matrix}
-\usepgfplotslibrary{external}
-\tikzexternalize[prefix=tikz/]
 
 \pgfplotsset{samples=60,shader=interp,grid=both}
 
@@ -727,4 +726,23 @@
 
 \RenewDocumentCommand{\tableofcontents}{}{
 	{\hypersetup{hidelinks}\oldtableofcontents}
+}
+
+\NewDocumentCommand{\DisableTikz}{}{%
+    \newif\ifshowtikz
+    \showtikztrue
+    \showtikzfalse   % <---- comment/uncomment that line
+    
+    \let\oldtikzpicture\tikzpicture
+    \let\oldendtikzpicture\endtikzpicture
+    
+    \renewenvironment{tikzpicture}{%
+        \ifshowtikz\expandafter\oldtikzpicture%
+        \else\comment%   
+        \fi
+    }{%
+        \ifshowtikz\oldendtikzpicture%
+        \else\endcomment%
+        \fi
+    }
 }
