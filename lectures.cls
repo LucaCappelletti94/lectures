@@ -239,6 +239,15 @@
 \buildVectorAliases{y}
 \buildVectorAliases{z}
 
+
+% Derivates
+\NewDocumentCommand{\derivate}{m m}{
+	\frac{d #1}{d #2}
+}
+\NewDocumentCommand{\pderivate}{m m}{
+	\frac{\partial #1}{\partial #2}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                         %
 % CUSTOM PROBABILITY COMMANDS AND MACROS  %
