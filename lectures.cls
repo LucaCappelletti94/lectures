@@ -239,6 +239,11 @@
 \buildVectorAliases{y}
 \buildVectorAliases{z}
 
+% Matrix
+\NewDocumentCommand{\Matrix}{m}{
+	\left[\begin{matrix}#1\end{matrix}\right]
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                         %
 % CUSTOM PROBABILITY COMMANDS AND MACROS  %
