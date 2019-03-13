@@ -192,6 +192,7 @@
 \def\positive{+}
 \def\false{\zero}
 \def\true{\one}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\D}{\mathbb{D}}
 \newcommand{\Z}{\mathbb{Z}}
