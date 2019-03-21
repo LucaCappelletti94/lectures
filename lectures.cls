@@ -547,6 +547,7 @@
   \newtheorem{proposition}[theorem]{Proposizione}
   \newtheorem{observation}[theorem]{Osservazione}
   \newtheorem{definition}[theorem]{Definizione}
+  \newtheorem{axiom}[theorem]{Assioma}
   \newtheorem{complexity}[theorem]{Complessità computazionale}
   \newtheorem{property}[theorem]{Proprietà}
   \newtheorem{problem}[theorem]{Problema}
@@ -559,6 +560,7 @@
     \newtheorem{proposition}[theorem]{Proposition}
     \newtheorem{observation}[theorem]{Observation}
     \newtheorem{definition}[theorem]{Definition}
+    \newtheorem{axiom}[theorem]{Axiom}
     \newtheorem{complexity}[theorem]{Computational complexity}
     \newtheorem{property}[theorem]{Property}
     \newtheorem{problem}[theorem]{Problem}
@@ -578,6 +580,9 @@
 
 \let\oldDefinition\definition
 \renewenvironment{definition}{\colorlet{shadecolor}{Red!10}\begin{shaded}\begin{oldDefinition}}{\end{oldDefinition}\end{shaded}\ignorespacesafterend}
+
+\let\oldAxiom\axiom
+\renewenvironment{axiom}{\colorlet{shadecolor}{Yellow!10}\begin{shaded}\begin{oldAxiom}}{\end{oldAxiom}\end{shaded}\ignorespacesafterend}
 
 \let\oldCorollary\corollary
 \renewenvironment{corollary}{\colorlet{shadecolor}{Brown!10}\begin{shaded}\begin{oldCorollary}}{\end{oldCorollary}\end{shaded}\ignorespacesafterend
