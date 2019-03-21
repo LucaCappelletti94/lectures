@@ -241,7 +241,7 @@
 
 % Matrix
 \NewDocumentCommand{\Matrix}{m}{
-	\left[\begin{matrix}#1\end{matrix}\right]
+	\begin{bmatrix}#1\end{bmatrix}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
