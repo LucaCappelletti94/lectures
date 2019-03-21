@@ -239,6 +239,13 @@
 \buildVectorAliases{y}
 \buildVectorAliases{z}
 
+% Derivates
+\NewDocumentCommand{\derivative}{m m}{
+	\frac{d #1}{d #2}
+}
+\NewDocumentCommand{\pderivative}{m m}{
+	\frac{\partial #1}{\partial #2}
+}
 % Matrix
 \NewDocumentCommand{\Matrix}{m}{
 	\begin{bmatrix}#1\end{bmatrix}
