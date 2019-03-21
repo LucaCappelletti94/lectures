@@ -241,10 +241,10 @@
 
 
 % Derivates
-\NewDocumentCommand{\derivate}{m m}{
+\NewDocumentCommand{\derivative}{m m}{
 	\frac{d #1}{d #2}
 }
-\NewDocumentCommand{\pderivate}{m m}{
+\NewDocumentCommand{\pderivative}{m m}{
 	\frac{\partial #1}{\partial #2}
 }
 
