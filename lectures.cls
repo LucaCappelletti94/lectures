@@ -29,6 +29,7 @@
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+\renewcommand{\familydefault}{\sfdefault}
 
 % Disabling useless warnings.
 \RequirePackage{silence}
@@ -53,8 +54,10 @@
 \RequirePackage{centernot}
 \RequirePackage{framed}
 \RequirePackage{float}
+\RequirePackage{stmaryrd}
 \RequirePackage{verbatim} 
 \RequirePackage[colorlinks=true,urlcolor=blue,pdfpagelabels,hyperindex=false]{hyperref}  % Enable table of contents and links.
+\RequirePackage{diagbox}% To make split cellboxes
 \RequirePackage[x11names,table,dvipsnames]{xcolor}
 
 \RequirePackage{subfiles} % To use subfiles without cruxifying saints
@@ -166,6 +169,7 @@
 
 \newcommand{\bra}[1]{\left\langle#1\right\rvert}
 \newcommand{\ket}[1]{\left\lvert#1\right\rangle}
+\newcommand{\ngle}[1]{\left\langle#1\right\rangle}
 \newcommand{\braket}[2]{\left\langle#1\delimsize\vert#2\right\rangle}
 
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
@@ -175,6 +179,7 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\rnd}[1]{\left(#1\right)}
 \newcommand{\sqr}[1]{\left[#1\right]}
+\newcommand{\ssqr}[1]{\llbracket#1\rrbracket}
 \newcommand{\crl}[1]{\left\{#1\right\}}
 \newcommand{\arity}[1]{\#\crl{#1}}
 
@@ -198,6 +203,10 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\bs}{\backslash}
+\newcommand{\f}[1]{f\rnd{#1}}
+\newcommand{\g}[1]{g\rnd{#1}}
+\newcommand{\funcdef}[3]{#1:#2\longrightarrow #3}
+\newcommand{\fdef}[2]{\funcdef{f}{#1}{#2}}
 
 \renewcommand{\O}[1]{\mathcal{O}\rnd{#1}}
 
@@ -595,6 +604,10 @@
 
 \let\oldLemma\lemma
 \renewenvironment{lemma}{\colorlet{shadecolor}{Green!10}\begin{shaded}\begin{oldLemma}}{\end{oldLemma}\end{shaded}\ignorespacesafterend
+}
+
+\let\oldObservation\observation
+\renewenvironment{observation}{\colorlet{shadecolor}{Red!3}\begin{shaded}\begin{oldObservation}}{\end{oldObservation}\end{shaded}\ignorespacesafterend
 }
 
 \let\oldComplexity\complexity
