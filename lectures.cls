@@ -562,6 +562,7 @@
   \newtheorem{property}[theorem]{Proprietà}
   \newtheorem{problem}[theorem]{Problema}
   \newtheorem{customProof}[theorem]{Dimostrazione}
+  \newtheorem{example}[theorem]{Example}
 }{
   \IfEq{\defaultlanguage}{english}{
     \newtheorem{theorem}{Theorem}[section]
@@ -574,6 +575,7 @@
     \newtheorem{complexity}[theorem]{Computational complexity}
     \newtheorem{property}[theorem]{Property}
     \newtheorem{problem}[theorem]{Problem}
+    \newtheorem{example}[theorem]{Example}
     \newtheorem{customProof}[theorem]{Proof}
   }{
     \PackageError{lectures}{%
@@ -618,6 +620,9 @@
 
 \let\oldProblem\problem
 \renewenvironment{problem}{\colorlet{shadecolor}{Red!15}\begin{shaded}\begin{oldProblem}}{\end{oldProblem}\end{shaded}\ignorespacesafterend}
+
+\let\oldExample\example
+\renewenvironment{example}{\colorlet{shadecolor}{Green!10}\begin{shaded}\begin{oldExample}}{\end{oldExample}\end{shaded}\ignorespacesafterend}
 
 \renewenvironment{proof}{\colorlet{shadecolor}{Violet!10}\begin{shaded}\begin{customProof}}{\QED\end{customProof}\end{shaded}\ignorespacesafterend}
 
