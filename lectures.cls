@@ -89,11 +89,11 @@
   {\size@chapter{\sectfont\raggedleft
         {\chapnumfont
           \ifnum \c@secnumdepth >\m@ne%
-            \if@mainmatter\thechapter\else\phantom{\thechapter}%
+            \if@mainmatter\Huge\thechapter\else\phantom{\thechapter}%
             \fi\else\phantom{\thechapter}\fi
           \par\nobreak}%
         {\raggedleft\advance\leftmargin10em\interlinepenalty\@M #1\par}}
-      \nobreak\chapterheadendvskip}}
+      \nobreak}}
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -562,7 +562,8 @@
   \newtheorem{property}[theorem]{Proprietà}
   \newtheorem{problem}[theorem]{Problema}
   \newtheorem{customProof}[theorem]{Dimostrazione}
-  \newtheorem{example}[theorem]{Example}
+  \newtheorem{example}[theorem]{Esempio}
+  \newtheorem{solution}[theorem]{Soluzione}
 }{
   \IfEq{\defaultlanguage}{english}{
     \newtheorem{theorem}{Theorem}[section]
@@ -576,6 +577,7 @@
     \newtheorem{property}[theorem]{Property}
     \newtheorem{problem}[theorem]{Problem}
     \newtheorem{example}[theorem]{Example}
+    \newtheorem{example}[theorem]{Solution}
     \newtheorem{customProof}[theorem]{Proof}
   }{
     \PackageError{lectures}{%
@@ -622,7 +624,10 @@
 \renewenvironment{problem}{\colorlet{shadecolor}{Red!15}\begin{shaded}\begin{oldProblem}}{\end{oldProblem}\end{shaded}\ignorespacesafterend}
 
 \let\oldExample\example
-\renewenvironment{example}{\colorlet{shadecolor}{Green!10}\begin{shaded}\begin{oldExample}}{\end{oldExample}\end{shaded}\ignorespacesafterend}
+\renewenvironment{example}{\colorlet{shadecolor}{Green!5}\begin{shaded}\begin{oldExample}}{\end{oldExample}\end{shaded}\ignorespacesafterend}
+
+\let\oldSolution\solution
+\renewenvironment{solution}{\colorlet{shadecolor}{Blue!5}\begin{shaded}\begin{oldSolution}}{\end{oldSolution}\end{shaded}\ignorespacesafterend}
 
 \renewenvironment{proof}{\colorlet{shadecolor}{Violet!10}\begin{shaded}\begin{customProof}}{\QED\end{customProof}\end{shaded}\ignorespacesafterend}
 
