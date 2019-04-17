@@ -48,7 +48,6 @@
 \RequirePackage[english, italian]{babel} % Set up supported languages. Last one is default.
 \RequirePackage[T1]{fontenc}  % Defines true type fonts
 \RequirePackage{multicol}
-\setlength\columnsep{25pt}
 \RequirePackage{emptypage}
 \RequirePackage{microtype}
 \RequirePackage{centernot}
@@ -155,15 +154,6 @@
 %                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\DeclareMathOperator{\var}{Var}
-\DeclareMathOperator{\conv}{conv}
-\DeclareMathOperator*{\argmin}{argmin}
-\DeclareMathOperator*{\argmax}{argmax}
-\DeclareMathOperator*{\mcd}{mcd}
-\DeclareMathOperator*{\mcp}{mcp}
-\DeclareMathOperator*{\Gr}{G=\rnd{V, E}}
-%\DeclareMathOperator* this one allows to create environment that behave like sum or min
-
 \newcommand{\crs}{\text{\Cross}}
 \newcommand*{\QED}{\hfill\ensuremath{\square}}%
 
@@ -182,7 +172,8 @@
 \newcommand{\ssqr}[1]{\llbracket#1\rrbracket}
 \newcommand{\crl}[1]{\left\{#1\right\}}
 \newcommand{\arity}[1]{\#\crl{#1}}
-
+\renewcommand{\hat}{\widehat}
+\renewcommand{\tilde}{\widetilde}
 \let\oldbm\bm
 \renewcommand{\bar}{\overline}
 \renewcommand{\bm}[1]{\oldbm{\underline{#1}}}
@@ -190,6 +181,15 @@
 \newcommand{\bbm}[1]{\bar{\bm{#1}}}
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
+
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\mcd}{mcd}
+\DeclareMathOperator*{\mcp}{mcp}
+\DeclareMathOperator*{\Gr}{G=\rnd{V, E}}
+%\DeclareMathOperator* this one allows to create environment that behave like sum or min
 
 \def\zero{0}
 \def\one{1}
@@ -232,7 +232,7 @@
 
 \renewcommand{\a}{\alpha}
 \newcommand{\w}{\omega}
-\newcommand{\e}{\epsilon}
+\newcommand{\e}{\varepsilon}
 
 \buildVectorAliases{a}[\a]
 \buildVectorAliases{w}[\w]
@@ -299,12 +299,12 @@
   % #5 (optional) -> upscript
   %
   \ifblank{#3}{%
-    \mathbb{E}_{#4}^{#5}\rnd{#1}
+    \mathbb{E}_{#4}^{#5}\sqr{#1}
   }{%
     \IfNoValueTF{#2}{%
-      \mathbb{E}_{#4}^{#5}\rnd{\left. #1 \;\right\rvert\; #3}
+      \mathbb{E}_{#4}^{#5}\sqr{\left. #1 \;\right\rvert\; #3}
     }{%
-      \mathbb{E}_{#4}^{#5}\rnd{#1\;#2\;#3}
+      \mathbb{E}_{#4}^{#5}\sqr{#1\;#2\;#3}
     }
   }
 }
@@ -549,87 +549,44 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \theoremstyle{definition} % Sets the theorem style without italic
-
-\IfEq{\defaultlanguage}{italian}{
-  \newtheorem{theorem}{Teorema}[section]
-  \newtheorem{corollary}{Corollario}[theorem]
-  \newtheorem{lemma}[theorem]{Lemma}
-  \newtheorem{proposition}[theorem]{Proposizione}
-  \newtheorem{observation}[theorem]{Osservazione}
-  \newtheorem{definition}[theorem]{Definizione}
-  \newtheorem{axiom}[theorem]{Assioma}
-  \newtheorem{complexity}[theorem]{Complessità computazionale}
-  \newtheorem{property}[theorem]{Proprietà}
-  \newtheorem{problem}[theorem]{Problema}
-  \newtheorem{customProof}[theorem]{Dimostrazione}
-  \newtheorem{example}[theorem]{Esempio}
-  \newtheorem{solution}[theorem]{Soluzione}
-}{
-  \IfEq{\defaultlanguage}{english}{
-    \newtheorem{theorem}{Theorem}[section]
-    \newtheorem{corollary}{Corollary}[theorem]
-    \newtheorem{lemma}[theorem]{Lemma}
-    \newtheorem{proposition}[theorem]{Proposition}
-    \newtheorem{observation}[theorem]{Observation}
-    \newtheorem{definition}[theorem]{Definition}
-    \newtheorem{axiom}[theorem]{Axiom}
-    \newtheorem{complexity}[theorem]{Computational complexity}
-    \newtheorem{property}[theorem]{Property}
-    \newtheorem{problem}[theorem]{Problem}
-    \newtheorem{example}[theorem]{Example}
-    \newtheorem{example}[theorem]{Solution}
-    \newtheorem{customProof}[theorem]{Proof}
-  }{
-    \PackageError{lectures}{%
-        Given language option is unknown.
-      }{%
-        Use either italian or english.
-      }
-  }
+\usepackage{tcolorbox}
+\NewDocumentCommand{\createtheorem}{m m m m m}{%
+    % #1 -> environment name
+    % #2 -> italian name
+    % #3 -> background color
+    % #4 -> border color
+    % #5 -> title color
+    
+    \newtcolorbox[auto counter,number within=chapter]{#1}[1][]{colback=#3,colframe=#4,coltitle=#5,fonttitle=\bfseries,parbox=false,title=#2~\thetcbcounter~|~##1}
 }
 
+\createtheorem{axiom}{Assioma}{Gold1!10}{Gold1!60}{black}
+\createtheorem{goal}{Obbiettivo}{Goldenrod1!10}{Goldenrod1!50}{black}
 
-\let\oldTheorem\theorem
-\renewenvironment{theorem}{\colorlet{shadecolor}{Green!15}\begin{shaded}\begin{oldTheorem}}{\end{oldTheorem}\end{shaded}\ignorespacesafterend}
+\createtheorem{definition}{Definizione}{Red2!10}{Red2!40}{black}
 
-\let\oldDefinition\definition
-\renewenvironment{definition}{\colorlet{shadecolor}{Red!10}\begin{shaded}\begin{oldDefinition}}{\end{oldDefinition}\end{shaded}\ignorespacesafterend}
+\createtheorem{fact}{Fatto}{Green3!10}{Green3!30}{black}
+\createtheorem{theorem}{Teorema}{Chartreuse2!10}{Chartreuse3!30}{black}
+\createtheorem{lemma}{Lemma}{Chartreuse3!10}{Chartreuse3!40}{black}
 
-\let\oldAxiom\axiom
-\renewenvironment{axiom}{\colorlet{shadecolor}{Yellow!10}\begin{shaded}\begin{oldAxiom}}{\end{oldAxiom}\end{shaded}\ignorespacesafterend}
+\createtheorem{corollary}{Corollario}{Sienna2!10}{Sienna2!60}{black}
+\createtheorem{property}{Proprietà}{Sienna2!10}{Sienna2!90}{white}
 
-\let\oldCorollary\corollary
-\renewenvironment{corollary}{\colorlet{shadecolor}{Brown!10}\begin{shaded}\begin{oldCorollary}}{\end{oldCorollary}\end{shaded}\ignorespacesafterend
-}
+\createtheorem{proposition}{Proposizione}{SpringGreen3!10}{SpringGreen3!30}{black}
+\createtheorem{observation}{Osservazione}{Firebrick2!10}{Firebrick2!40}{black}
 
-\let\oldProposition\proposition
-\renewenvironment{proposition}{\colorlet{shadecolor}{Green!5}\begin{shaded}\begin{oldProposition}}{\end{oldProposition}\end{shaded}\ignorespacesafterend
-}
+\createtheorem{conclusion}{Conclusione}{SteelBlue3!10}{SteelBlue3!90}{black}
+\createtheorem{generalization}{Generalizzazione}{LavenderBlush3!10}{LavenderBlush3}{black}
 
-\let\oldLemma\lemma
-\renewenvironment{lemma}{\colorlet{shadecolor}{Green!10}\begin{shaded}\begin{oldLemma}}{\end{oldLemma}\end{shaded}\ignorespacesafterend
-}
+\createtheorem{problem}{Problema}{Red1!10}{Red1!60}{white}
+\createtheorem{example}{Esempio}{MediumPurple3!10}{MediumPurple3!40}{black}
 
-\let\oldObservation\observation
-\renewenvironment{observation}{\colorlet{shadecolor}{Red!3}\begin{shaded}\begin{oldObservation}}{\end{oldObservation}\end{shaded}\ignorespacesafterend
-}
+\createtheorem{solution}{Soluzione}{DodgerBlue3!10}{DodgerBlue3!30}{black}
+\createtheorem{analysis}{Analisi}{DeepPink2!10}{DeepPink2!30}{black}
+\createtheorem{complexity}{Complessità}{Turquoise4!10}{Turquoise4}{black}
 
-\let\oldComplexity\complexity
-\renewenvironment{complexity}{\colorlet{shadecolor}{Melon!10}\begin{shaded}\begin{oldComplexity}}{\end{oldComplexity}\end{shaded}\ignorespacesafterend}
-
-\let\oldProperty\property
-\renewenvironment{property}{\colorlet{shadecolor}{Red!10}\begin{shaded}\begin{oldProperty}}{\end{oldProperty}\end{shaded}\ignorespacesafterend}
-
-\let\oldProblem\problem
-\renewenvironment{problem}{\colorlet{shadecolor}{Red!15}\begin{shaded}\begin{oldProblem}}{\end{oldProblem}\end{shaded}\ignorespacesafterend}
-
-\let\oldExample\example
-\renewenvironment{example}{\colorlet{shadecolor}{Green!5}\begin{shaded}\begin{oldExample}}{\end{oldExample}\end{shaded}\ignorespacesafterend}
-
-\let\oldSolution\solution
-\renewenvironment{solution}{\colorlet{shadecolor}{Blue!5}\begin{shaded}\begin{oldSolution}}{\end{oldSolution}\end{shaded}\ignorespacesafterend}
-
-\renewenvironment{proof}{\colorlet{shadecolor}{Violet!10}\begin{shaded}\begin{customProof}}{\QED\end{customProof}\end{shaded}\ignorespacesafterend}
+\createtheorem{proofWrapper}{Dimostrazione}{DarkOrchid4!10}{DarkOrchid4!30}{black}
+\renewenvironment{proof}{\begin{proofWrapper}}{\end{proofWrapper}}
 
 %
 % THE FOLLOWING CODE ADDS BOLD TO THE THEOREM NAME
