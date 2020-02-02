@@ -1,5 +1,5 @@
 %
-% Copyright 2018 Luca Cappelletti
+% Copyright 2020 Luca Cappelletti
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 %
@@ -55,6 +55,7 @@
 \RequirePackage{float}
 \RequirePackage{stmaryrd}
 \RequirePackage{verbatim} 
+\RequirePackage{gensymb}
 \RequirePackage[colorlinks=true,urlcolor=blue,pdfpagelabels,hyperindex=false]{hyperref}  % Enable table of contents and links.
 \RequirePackage{diagbox}% To make split cellboxes
 \RequirePackage[x11names,table,dvipsnames]{xcolor}
@@ -203,8 +204,6 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\bs}{\backslash}
-\newcommand{\f}[1]{f\rnd{#1}}
-\newcommand{\g}[1]{g\rnd{#1}}
 \newcommand{\funcdef}[3]{#1:#2\longrightarrow #3}
 \newcommand{\fdef}[2]{\funcdef{f}{#1}{#2}}
 
@@ -568,6 +567,8 @@
 \createtheorem{fact}{Fatto}{Green3!10}{Green3!30}{black}
 \createtheorem{theorem}{Teorema}{Chartreuse2!10}{Chartreuse3!30}{black}
 \createtheorem{lemma}{Lemma}{Chartreuse3!10}{Chartreuse3!40}{black}
+
+\createtheorem{claim}{Affermazione}{Chartreuse3!10}{Chartreuse3!40}{black}
 
 \createtheorem{corollary}{Corollario}{Sienna2!10}{Sienna2!60}{black}
 \createtheorem{property}{Proprietà}{Sienna2!10}{Sienna2!90}{white}
