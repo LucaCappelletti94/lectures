@@ -10,7 +10,7 @@
 \def\LectureNotesVersion{v1.0.6}
 \newcommand{\defaultlanguage}{english}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{lectures}[2019/01/27 LaTeX document class for lectures notes.]
+\ProvidesClass{lectures}[2025/02/04 LaTeX document class for lectures notes.]
 \LoadClass{report}
 
 \DeclareOption{italian}{\renewcommand{\defaultlanguage}{italian}}

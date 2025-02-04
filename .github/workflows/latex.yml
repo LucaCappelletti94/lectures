@@ -33,5 +33,5 @@ jobs:
 
     - name: Compile English LaTeX file
       run: |
-        pdflatex -interaction=nonstopmode -shell-escape english_test.tex
-        pdflatex -interaction=nonstopmode -shell-escape english_test.tex
+        pdflatex -interaction=nonstopmode -shell-escape example.tex
+        pdflatex -interaction=nonstopmode -shell-escape example.tex
