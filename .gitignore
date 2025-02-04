@@ -7,3 +7,6 @@
 *.fls
 *.xml
 *.gz
+*.log
+*.out
+_minted-*

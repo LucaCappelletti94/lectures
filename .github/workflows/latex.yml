@@ -1,0 +1,34 @@
+name: LaTeX CI
+
+on:
+  push:
+    branches:
+      - main  # adjust branch name as needed
+  pull_request:
+    branches:
+      - main  # adjust branch name as needed
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install LaTeX
+      run: sudo apt-get install texlive-full -y
+
+    - name: Install Pygments for minted
+      run: sudo apt-get install python3-pygments -y
+
+    - name: Compile Default LaTeX file
+      run: |
+        pdflatex -interaction=nonstopmode -shell-escape test.tex
+        pdflatex -interaction=nonstopmode -shell-escape test.tex
+
+    - name: Compile English LaTeX file
+      run: |
+        pdflatex -interaction=nonstopmode -shell-escape english_test.tex
+        pdflatex -interaction=nonstopmode -shell-escape english_test.tex
