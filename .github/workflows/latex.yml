@@ -17,6 +17,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Update apt-get
+      run: sudo apt-get update
+
     - name: Install LaTeX
       run: sudo apt-get install texlive-full -y
 
