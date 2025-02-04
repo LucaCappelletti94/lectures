@@ -1,6 +1,6 @@
 # Lectures
 
-[![GitHub Actions](https://github.com/LucaCappelletti94/lectures/actions/workflows/rust.yml/badge.svg)](https://github.com/LucaCappelletti94/lectures/actions)
+[![GitHub Actions](https://github.com/LucaCappelletti94/lectures/actions/workflows/latex.yml/badge.svg)](https://github.com/LucaCappelletti94/lectures/actions)
 [![Version](https://img.shields.io/badge/CTAN_Version-1.0.6-blue.svg)](https://ctan.org/pkg/lectures)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/LucaCappelletti94/lectures/blob/main/LICENSE)
 [![Available in](https://img.shields.io/badge/Available_in-TEX_Live-green.svg)](https://ctan.org/pkg/texlive)
@@ -37,28 +37,30 @@ One of the main features of the library is the provided title page. You can crea
 ```latex
 \documentclass{lectures}
 \begin{document}
-    \maketitle{
-      Your title
-    }{
-      First author name,Second author name
-    }{
-      First professor name,Second professor name
-    }{
-      Parlo Parloni,Parletti Parini
-    }{
-      Year
-    }{
-      CFU of the course
-    }{
-      Informatica
-    }{
-      University name
-    }{
-      Country
-    }
+\maketitle{
+  Your title
+}{
+  First author name,Second author name
+}{
+  First professor name,Second professor name
+}{
+  Parlo Parloni,Parletti Parini
+}{
+  Year
+}{
+  CFU of the course
+}{
+  Informatica
+}{
+  University name
+}{
+  Country
+}
 
 \end{document}
 ```
+
+[![Title page example](https://github.com/LucaCappelletti94/lectures/blob/master/title_page_example.png?raw=true)](https://github.com/LucaCappelletti94/lectures/blob/master/title_page_example.png)
 
 ## Features
 
@@ -106,7 +108,7 @@ Example usage:
 
 ### Theorems related gimmicks
 
-All theorems are in `definition` style, meaning that they are not in *italic*.
+All theorems are in `definition` style, meaning that they are not in *italic*. All environments are color-coded to facilitate reading and reviewing.
 
 Proofs are treated as theorem environments.
 
@@ -146,6 +148,8 @@ A prime number is a natural number greater than 1 that has no positive divisors 
 
 \end{document}
 ```
+
+[![Theorem example](https://github.com/LucaCappelletti94/lectures/blob/master/example.png?raw=true)](https://github.com/LucaCappelletti94/lectures/blob/master/example.png)
 
 ### Lists related gimmicks
 
