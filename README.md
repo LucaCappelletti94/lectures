@@ -1,5 +1,11 @@
 # Lectures
 
+[![GitHub Actions](https://github.com/LucaCappelletti94/lectures/actions/workflows/rust.yml/badge.svg)](https://github.com/LucaCappelletti94/lectures/actions)
+[![Version](https://img.shields.io/badge/CTAN_Version-1.0.6-blue.svg)](https://ctan.org/pkg/lectures)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/LucaCappelletti94/lectures/blob/main/LICENSE)
+[![Available in](https://img.shields.io/badge/Available_in-TEX_Live-green.svg)](https://ctan.org/pkg/texlive)
+[![Available in](https://img.shields.io/badge/Available_in-MiKTEX-green.svg)](https://ctan.org/pkg/miktex)
+
 A LaTeX documentclass for lecture notes.
 
 ## Usage
@@ -125,6 +131,9 @@ Example usage:
 
 \begin{theorem}[Pythagorean Theorem]
 In a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.
+\begin{equation}
+a^2 + b^2 = c^2
+\end{equation}
 \end{theorem}
 
 \begin{proof}

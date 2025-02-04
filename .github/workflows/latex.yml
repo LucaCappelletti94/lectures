@@ -3,10 +3,10 @@ name: LaTeX CI
 on:
   push:
     branches:
-      - main  # adjust branch name as needed
+      - master  # adjust branch name as needed
   pull_request:
     branches:
-      - main  # adjust branch name as needed
+      - master  # adjust branch name as needed
 
 jobs:
   build:
