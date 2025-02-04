@@ -2,7 +2,7 @@
 
 [![GitHub Actions](https://github.com/LucaCappelletti94/lectures/actions/workflows/latex.yml/badge.svg)](https://github.com/LucaCappelletti94/lectures/actions)
 [![Version](https://img.shields.io/badge/CTAN_Version-1.0.6-blue.svg)](https://ctan.org/pkg/lectures)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/LucaCappelletti94/lectures/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/LucaCappelletti94/lectures/blob/master/LICENSE)
 [![Available in](https://img.shields.io/badge/Available_in-TEX_Live-green.svg)](https://ctan.org/pkg/texlive)
 [![Available in](https://img.shields.io/badge/Available_in-MiKTEX-green.svg)](https://ctan.org/pkg/miktex)
 
@@ -189,3 +189,7 @@ Example usage:
 - When a page is empty, Latex won't generate page number or other page elements.
 - When you want to leave a blank line you can just leave a blank line, without adding `\\`.
 - If you'd like to use roman numerals there a command for that: `\rom{your number goes here}`.
+
+## License
+
+All the code in this repository is released under the MIT license. For more information, please refer to the [`LICENSE`](https://github.com/LucaCappelletti94/lectures/blob/master/LICENSE) file.
