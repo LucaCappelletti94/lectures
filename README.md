@@ -169,8 +169,11 @@ Example usage:
 \end{document}
 ```
 
+[![TODO List example](https://github.com/LucaCappelletti94/lectures/blob/master/todolist.png?raw=true)](https://github.com/LucaCappelletti94/lectures/blob/master/todolist.png)
+
 ### Additional gimmicks
 
 - When a page is empty, Latex won't generate page number or other page elements.
 - When you want to leave a blank line you can just leave a blank line, without adding `\\`.
 - If you'd like to use roman numerals there a command for that: `\rom{your number goes here}`.
+
