@@ -114,16 +114,25 @@ Proofs are treated as theorem environments.
 
 The following theorem-like environments are provided:
 
-- theorem
-- corollary
-- lemma
-- proposition
-- observation
-- definition
-- complexity
-- property
-- problem
-- proof
+- `axiom`: Fundamental principles assumed to be true.
+- `goal`: Objectives or targets to be achieved.
+- `definition`: Precise explanations of terms or concepts.
+- `fact`: Statements that are objectively true.
+- `theorem`: Proven statements based on axioms and other theorems.
+- `lemma`: Helper theorems used to prove larger results.
+- `claim`: Assertions that need to be proven.
+- `corollary`: Results that follow directly from theorems.
+- `property`: Characteristics or attributes of objects.
+- `proposition`: Important statements that are proven true.
+- `observation`: Noteworthy remarks or insights.
+- `conclusion`: Final statements derived from proofs or discussions.
+- `generalization`: Broader statements derived from specific cases.
+- `problem`: Questions or challenges to be solved.
+- `example`: Illustrative instances or cases.
+- `solution`: Answers or methods for solving problems.
+- `analysis`: Detailed examination of elements or structure.
+- `complexity`: Discussion of the computational complexity.
+- `proof`: Logical arguments establishing the truth of statements.
 
 Example usage:
 
@@ -149,7 +158,11 @@ A prime number is a natural number greater than 1 that has no positive divisors 
 \end{document}
 ```
 
-[![Theorem example](https://github.com/LucaCappelletti94/lectures/blob/master/example.png?raw=true)](https://github.com/LucaCappelletti94/lectures/blob/master/example.png)
+[![Theorem english example](https://github.com/LucaCappelletti94/lectures/blob/master/english_example.png?raw=true)](https://github.com/LucaCappelletti94/lectures/blob/master/english_example.png)
+
+Or if you selected the Italian language:
+
+[![Theorem italian example](https://github.com/LucaCappelletti94/lectures/blob/master/italian_example.png?raw=true)](https://github.com/LucaCappelletti94/lectures/blob/master/italian_example.png)
 
 ### Lists related gimmicks
 

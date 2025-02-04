@@ -559,35 +559,30 @@
     \newtcolorbox[auto counter,number within=chapter]{#1}[1][]{colback=#3,colframe=#4,coltitle=#5,fonttitle=\bfseries,parbox=false,title=#2~\thetcbcounter~|~##1}
 }
 
-\createtheorem{axiom}{Assioma}{Gold1!10}{Gold1!60}{black}
-\createtheorem{goal}{Obbiettivo}{Goldenrod1!10}{Goldenrod1!50}{black}
+\newcommand{\defineTheorems}{
+  \createtheorem{axiom}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Assioma}{Axiom}}{Gold1!10}{Gold1!60}{black}
+  \createtheorem{goal}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Obbiettivo}{Goal}}{Goldenrod1!10}{Goldenrod1!50}{black}
+  \createtheorem{definition}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Definizione}{Definition}}{Red2!10}{Red2!40}{black}
+  \createtheorem{fact}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Fatto}{Fact}}{Green3!10}{Green3!30}{black}
+  \createtheorem{theorem}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Teorema}{Theorem}}{Chartreuse2!10}{Chartreuse3!30}{black}
+  \createtheorem{lemma}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Lemma}{Lemma}}{Chartreuse3!10}{Chartreuse3!40}{black}
+  \createtheorem{claim}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Affermazione}{Claim}}{Chartreuse3!10}{Chartreuse3!40}{black}
+  \createtheorem{corollary}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Corollario}{Corollary}}{Sienna2!10}{Sienna2!60}{black}
+  \createtheorem{property}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Proprietà}{Property}}{Sienna2!10}{Sienna2!90}{white}
+  \createtheorem{proposition}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Proposizione}{Proposition}}{SpringGreen3!10}{SpringGreen3!30}{black}
+  \createtheorem{observation}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Osservazione}{Observation}}{Firebrick2!10}{Firebrick2!40}{black}
+  \createtheorem{conclusion}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Conclusione}{Conclusion}}{SteelBlue3!10}{SteelBlue3!90}{black}
+  \createtheorem{generalization}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Generalizzazione}{Generalization}}{LavenderBlush3!10}{LavenderBlush3}{black}
+  \createtheorem{problem}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Problema}{Problem}}{Red1!10}{Red1!60}{white}
+  \createtheorem{example}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Esempio}{Example}}{MediumPurple3!10}{MediumPurple3!40}{black}
+  \createtheorem{solution}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Soluzione}{Solution}}{DodgerBlue3!10}{DodgerBlue3!30}{black}
+  \createtheorem{analysis}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Analisi}{Analysis}}{DeepPink2!10}{DeepPink2!30}{black}
+  \createtheorem{complexity}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Complessità}{Complexity}}{Turquoise4!10}{Turquoise4}{black}
+  \createtheorem{proofWrapper}{\ifthenelse{\equal{\defaultlanguage}{italian}}{Dimostrazione}{Proof}}{DarkOrchid4!10}{DarkOrchid4!30}{black}
+  \renewenvironment{proof}{\begin{proofWrapper}}{\end{proofWrapper}}
+}
 
-\createtheorem{definition}{Definizione}{Red2!10}{Red2!40}{black}
-
-\createtheorem{fact}{Fatto}{Green3!10}{Green3!30}{black}
-\createtheorem{theorem}{Teorema}{Chartreuse2!10}{Chartreuse3!30}{black}
-\createtheorem{lemma}{Lemma}{Chartreuse3!10}{Chartreuse3!40}{black}
-
-\createtheorem{claim}{Affermazione}{Chartreuse3!10}{Chartreuse3!40}{black}
-
-\createtheorem{corollary}{Corollario}{Sienna2!10}{Sienna2!60}{black}
-\createtheorem{property}{Proprietà}{Sienna2!10}{Sienna2!90}{white}
-
-\createtheorem{proposition}{Proposizione}{SpringGreen3!10}{SpringGreen3!30}{black}
-\createtheorem{observation}{Osservazione}{Firebrick2!10}{Firebrick2!40}{black}
-
-\createtheorem{conclusion}{Conclusione}{SteelBlue3!10}{SteelBlue3!90}{black}
-\createtheorem{generalization}{Generalizzazione}{LavenderBlush3!10}{LavenderBlush3}{black}
-
-\createtheorem{problem}{Problema}{Red1!10}{Red1!60}{white}
-\createtheorem{example}{Esempio}{MediumPurple3!10}{MediumPurple3!40}{black}
-
-\createtheorem{solution}{Soluzione}{DodgerBlue3!10}{DodgerBlue3!30}{black}
-\createtheorem{analysis}{Analisi}{DeepPink2!10}{DeepPink2!30}{black}
-\createtheorem{complexity}{Complessità}{Turquoise4!10}{Turquoise4}{black}
-
-\createtheorem{proofWrapper}{Dimostrazione}{DarkOrchid4!10}{DarkOrchid4!30}{black}
-\renewenvironment{proof}{\begin{proofWrapper}}{\end{proofWrapper}}
+\AtBeginDocument{\defineTheorems}
 
 %
 % THE FOLLOWING CODE ADDS BOLD TO THE THEOREM NAME
