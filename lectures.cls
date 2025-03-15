@@ -10,7 +10,7 @@
 \def\LectureNotesVersion{v1.0.7}
 \newcommand{\defaultlanguage}{english}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{lectures}[2025/02/04 LaTeX document class for lectures notes.]
+\ProvidesClass{lectures}[2025/03/15 LaTeX document class for lectures notes.]
 \LoadClass{report}
 
 \DeclareOption{italian}{\renewcommand{\defaultlanguage}{italian}}
@@ -63,6 +63,7 @@
 \RequirePackage{subfiles} % To use subfiles without cruxifying saints
 \RequirePackage{parskip} % To leave spaces in paragraphs without using \\
 \RequirePackage{soul} % To cancel text with a line using the commant \st, to underline text and highlight.
+\RequirePackage{cancel} % To cancel text in a math environment
 \RequirePackage{fourier} % For icons such as \bomb, \noway, \danger and various others. For more info, go here: http://ctan.mirror.garr.it/mirrors/CTAN/fonts/fourier-GUT/doc/latex/fourier/fourier-orns.pdf
 \RequirePackage{marvosym} % For icons such as \Cross
 
