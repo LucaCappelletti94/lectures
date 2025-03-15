@@ -1,7 +1,7 @@
 # Lectures
 
 [![GitHub Actions](https://github.com/LucaCappelletti94/lectures/actions/workflows/latex.yml/badge.svg)](https://github.com/LucaCappelletti94/lectures/actions)
-[![Version](https://img.shields.io/badge/CTAN_Version-1.0.6-blue.svg)](https://ctan.org/pkg/lectures)
+[![Version](https://img.shields.io/badge/CTAN_Version-1.0.7-blue.svg)](https://ctan.org/pkg/lectures)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/LucaCappelletti94/lectures/blob/master/LICENSE)
 [![Available in](https://img.shields.io/badge/Available_in-TEX_Live-green.svg)](https://ctan.org/pkg/texlive)
 [![Available in](https://img.shields.io/badge/Available_in-MiKTEX-green.svg)](https://ctan.org/pkg/miktex)
