@@ -7,7 +7,7 @@
 %
 % THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 %
-\def\LectureNotesVersion{v1.0.6}
+\def\LectureNotesVersion{v1.0.7}
 \newcommand{\defaultlanguage}{english}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lectures}[2025/02/04 LaTeX document class for lectures notes.]
@@ -117,9 +117,9 @@
 \g@addto@macro\@floatboxreset\centering
 \makeatother
 
-\makeatletter
-\apptocmd\subcaption@minipage{\centering}{}{}
-\makeatother
+% \makeatletter
+% \apptocmd\subcaption@minipage{\centering}{}{}
+% \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THE FOLLOWING SETS ALL FLOATING ITEMS TO H BY DEFAULT %
